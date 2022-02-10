@@ -28,7 +28,7 @@ fn main() {
         loop {
             let mut input = String::new();
             io::stdin().read_line(&mut input).expect("読み取りに失敗");
-            let mut input: i32 = match input.trim().parse() {
+            let input: i32 = match input.trim().parse() {
                 Ok(n) => n,
                 Err(_) => {
                     println!("数値を入力してください:");
@@ -39,8 +39,7 @@ fn main() {
                 println!("正の数を入力してください:");
                 continue;
             } else if q_rslt != input as u32 {
-                input = i32::abs(input);
-                println!("不正解:\n{} の解は {} ではありません。", q_fmt, input);
+                println!("不正解:\n{} の解は {} ではありません。", q_fmt, input.abs());
                 continue;
             } else {
                 println!("正解: {} {}", q_fmt, q_rslt);
