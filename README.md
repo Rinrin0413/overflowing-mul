@@ -7,4 +7,4 @@ Rust製なので速くて安全です( 'ω')b
 
 <br />
 
-[![MIT](https://img.shields.io/github/license/Rinrin0413/overflowing-mul?color=%23A11D32&style=for-the-badge)](./LICENSE)
+[![WTFPL](https://img.shields.io/github/license/Rinrin0413/overflowing-mul?color=FFFFFF&style=for-the-badge)](./LICENSE)
