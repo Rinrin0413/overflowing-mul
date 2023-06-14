@@ -33,7 +33,10 @@ fn main() {
         println!("{}", formula);
         loop {
             let mut input = String::new();
-            io::stdin().read_line(&mut input).expect("読み取りに失敗");
+            if let Err(why) = io::stdin().read_line(&mut input) {
+                eprintln!("Read line error: {}", why);
+                continue;
+            }
             let input: i32 = match input.trim().parse() {
                 Ok(n) => n,
                 Err(_) => {
