@@ -1,3 +1,4 @@
+use colored::*;
 use rand::Rng;
 use std::{fmt, io};
 
@@ -30,7 +31,7 @@ fn main() {
         let problem = Problem::new(rng.gen_range(10..999), rng.gen_range(1..99));
         let formula = problem.to_string();
         let answer = problem.answer();
-        println!("{}", formula);
+        println!("{}", formula.blue().bold());
         loop {
             let mut input = String::new();
             if let Err(why) = io::stdin().read_line(&mut input) {
@@ -40,17 +41,20 @@ fn main() {
             let input: u32 = match input.trim().parse() {
                 Ok(n) => n,
                 Err(_) => {
-                    println!("Enter a natural number less than or equal to {}", i32::MAX);
+                    println!(
+                        "{}",
+                        format!("Enter a natural number less than or equal to {}", i32::MAX).red()
+                    );
                     continue;
                 }
             };
             if input == answer {
-                println!("Correct! {} {}", formula, answer);
+                println!("{} {} {}", "Correct!".green(), formula, answer);
                 println!("================================");
                 println!("Next problem:");
                 break;
             } else {
-                println!("Incorrect!");
+                println!("{}", "Incorrect!".red());
                 continue;
             }
         }
