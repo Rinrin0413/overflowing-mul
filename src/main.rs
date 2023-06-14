@@ -13,14 +13,14 @@ struct Localization {
 
 impl Localization {
     fn init() -> Self {
-        Self { 
+        Self {
             lang: LANG_FILE.map(parse_lang_file),
             english: parse_lang_file(ENG_LANG_FILE),
         }
     }
 
     /// Returns language specified at compile time.
-    /// 
+    ///
     /// If corresponding localization is not found, returns English localization.
     /// If English localization is also not found, returns key itself.
     fn get<'a>(&'a self, key: &'a str) -> &str {
@@ -45,7 +45,10 @@ impl Localization {
 
 fn parse_lang_file(lang_file: &str) -> Value {
     lang_file.parse::<Value>().unwrap_or_else(|why| {
-        eprintln!("{}", format!("Failed to parse language file:\n{}", why).red());
+        eprintln!(
+            "{}",
+            format!("Failed to parse language file:\n{}", why).red()
+        );
         std::process::exit(1);
     })
 }
@@ -98,7 +101,7 @@ fn main() {
             let input: u32 = match input.trim().parse() {
                 Ok(n) => n,
                 Err(_) => {
-                    println!("{}", lang.get("error_parse")/*, i32::MAX*/);
+                    println!("{}", lang.get("error_parse") /*, i32::MAX*/);
                     continue;
                 }
             };
