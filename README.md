@@ -7,12 +7,7 @@
 ```bash
 $ git clone https://github.com/Rinrin0413/overflowing-mul.git
 $ cd overflowing-mul
-
-# Release build (English)
 $ cargo build --release
-
-# Release build (Japanese)
-$ cargo build --release --features ja
 ```
 
 You can find the executable file in `target/release/`.
