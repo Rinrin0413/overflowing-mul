@@ -1,20 +1,26 @@
 use rand::Rng;
-use std::io;
+use std::{fmt, io};
 
 struct MulFormula {
-    mul_er: u16,
-    mul_cand: u16,
+    multiplicand: u16,
+    multiplier: u16,
 }
 
 impl MulFormula {
-    pub fn new(mul_er: u16, mul_cand: u16) -> Self {
-        Self { mul_er, mul_cand }
+    fn new(multiplicand: u16, multiplier: u16) -> Self {
+        Self {
+            multiplicand,
+            multiplier,
+        }
     }
-    pub fn format(&self) -> String {
-        format!("{} × {} =", self.mul_er, self.mul_cand)
+    fn result(&self) -> u32 {
+        self.multiplicand as u32 * self.multiplier as u32
     }
-    pub fn result(&self) -> u32 {
-        self.mul_er as u32 * self.mul_cand as u32
+}
+
+impl fmt::Display for MulFormula {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} × {} =", self.multiplicand, self.multiplier)
     }
 }
 
@@ -22,7 +28,7 @@ fn main() {
     let mut rng = rand::thread_rng();
     loop {
         let q = MulFormula::new(rng.gen_range(10..999), rng.gen_range(1..99));
-        let q_fmt = q.format();
+        let q_fmt = q.to_string();
         let q_rslt = q.result();
         println!("解を答えてください:\n{}", q_fmt);
         loop {
