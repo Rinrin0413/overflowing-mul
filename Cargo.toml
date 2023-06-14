@@ -7,11 +7,6 @@ repository = "https://github.com/Rinrin0413/overflowing-mul.git"
 readme = "README.md"
 edition = "2021"
 
-[features]
-en = []
-ja = []
-
 [dependencies]
 rand = "0.8"
 colored = "2"
-toml = "0.7.4"

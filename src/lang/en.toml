@@ -1,6 +1,0 @@
-correct = "Correct!"
-incorrect = "Incorrect!"
-nextProblem = "Next problem"
-
-error_readLine = "Read line error"
-error_parse = "Enter a natural number less than or equal to {}"
