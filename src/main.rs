@@ -50,7 +50,7 @@ fn main() {
                 println!("Next problem:");
                 break;
             } else {
-                println!("Incorrect! {} {}", formula, answer);
+                println!("Incorrect!");
                 continue;
             }
         }
