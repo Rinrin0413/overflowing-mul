@@ -14,11 +14,7 @@ struct Localization {
 impl Localization {
     fn init() -> Self {
         Self { 
-            lang: if let Some(lang_file) = LANG_FILE {
-                Some(parse_lang_file(lang_file))
-            } else {
-                None
-            },
+            lang: LANG_FILE.map(|f| parse_lang_file(f)),
             english: parse_lang_file(ENG_LANG_FILE),
         }
     }
