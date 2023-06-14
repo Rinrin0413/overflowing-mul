@@ -14,7 +14,7 @@ struct Localization {
 impl Localization {
     fn init() -> Self {
         Self { 
-            lang: LANG_FILE.map(|f| parse_lang_file(f)),
+            lang: LANG_FILE.map(parse_lang_file),
             english: parse_lang_file(ENG_LANG_FILE),
         }
     }
