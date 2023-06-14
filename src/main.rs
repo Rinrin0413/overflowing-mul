@@ -44,17 +44,21 @@ fn main() {
                     continue;
                 }
             };
-            if input < 0 {
-                println!("正の数を入力してください:");
-                continue;
-            } else if answer != input as u32 {
-                println!("不正解:\n{} の解は {} ではありません。", formula, input.abs());
-                continue;
-            } else {
-                println!("正解: {} {}", formula, answer);
-                println!("================================");
-                println!("次の問題");
-                break;
+            match input {
+                n if n < 0 => {
+                    println!("正の数を入力してください:");
+                    continue;
+                }
+                n if n as u32 != answer => {
+                    println!("不正解:\n{} の解は {} ではありません。", formula, n);
+                    continue;
+                }
+                _ => {
+                    println!("正解: {} {}", formula, answer);
+                    println!("================================");
+                    println!("次の問題");
+                    break;
+                }
             }
         }
     }
