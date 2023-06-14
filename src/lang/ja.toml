@@ -1,0 +1,6 @@
+correct = "正解!"
+incorrect = "不正解!"
+nextProblem = "次の問題"
+
+error_readLine = "入力の読み取りに失敗"
+error_parse = "{}以下の自然数を入力してください"
