@@ -40,7 +40,7 @@ fn main() {
             let input: u32 = match input.trim().parse() {
                 Ok(n) => n,
                 Err(_) => {
-                    eprintln!("Enter a natural number less than or equal to {}", i32::MAX);
+                    println!("Enter a natural number less than or equal to {}", i32::MAX);
                     continue;
                 }
             };
