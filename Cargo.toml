@@ -1,10 +1,11 @@
 [package]
-name = "overflowing-mul"
-version = "0.1.0"
-authors = ["Rinrin.rs"]
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+name = "overflowing_mul"
+version = "0.1.1"
+authors = ["Rinrin.rs <rinrin0413.valley@gmail.com>"]
+license-file = "LICENSE"
+repository = "https://github.com/Rinrin0413/overflowing-mul.git"
+readme = "README.md"
+edition = "2021"
 
 [dependencies]
-rand = "0.8.4"
+rand = "0.8"
